@@ -1,0 +1,113 @@
+.banner {
+  height: 394px;
+  color: $brown;
+  background: url("../images/banner.png") no-repeat center / cover;
+  background-attachment: fixed;
+
+  @include media-breakpoint-up(md) {
+    height: 840px;
+    padding-right: 2.4375rem;
+    background: url("../images/banner-sm.png") no-repeat center / cover;
+  }
+
+  &_Title {
+    font-size: 1rem;
+    @include font-set(1em, 1.875rem, 500);
+
+    @include media-breakpoint-up(sm) {
+      @include font-set(2.25rem, 3.375rem);
+    }
+
+    @include media-breakpoint-up(lg) {
+      @include font-set(1.25rem, 1.875rem, 500);
+    }
+  }
+}
+
+.classicProduct {
+  &_img {
+    max-height: 320px;
+    object-fit: cover;
+  }
+
+  @media(min-width: 992px) {
+    &_img {
+      transition: all 1s ease-out;
+    }
+
+    &_img:hover {
+      transition: all 0.5s cubic-bezier(.165, .84, .44, 1);
+      transform: scale(1.2);
+    }
+  }
+
+  &_subTitle {
+    display: flex;
+    align-items: center;
+    font-size: 1.75rem;
+    font-style: italic;
+    text-transform: uppercase;
+    color: $red;
+    position: absolute;
+    justify-content: center;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+    @include media-breakpoint-up(md) {
+      position: static;
+      top: unset;
+      transform: unset;
+      justify-content: flex-start;
+    }
+
+    @include media-breakpoint-up(xl) {
+      @include font-set(3rem, 4.5rem, 900);
+    }
+
+
+  }
+}
+
+.crossProduct {
+  background: url("../images/bg.png") no-repeat center / cover;
+
+  &__img {
+    position: relative;
+
+    &::before {
+      content: '';
+      width: 100%;
+      height: 100%;
+      display: inline-block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background-color: rgba(255, 255, 255, 0.5);
+    }
+  }
+
+  &__img:hover img {
+    filter: blur(5px);
+  }
+
+  &__img:hover img {
+    filter: blur(5px);
+  }
+
+  &__subTitle {
+    @include font-set(2rem, 1.5625rem);
+    font-weight: medium;
+    color: $red;
+    white-space: nowrap;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    // z-index: 2;
+    @include media-breakpoint-up(lg) {
+      @include font-set(4.5rem, 4.5rem, 700);
+    }
+  }
+}
